@@ -23,10 +23,10 @@ classdef Airfoil < handle
             Header = fgetl(fid);
             tmp=textscan(Header, '%f%f','MultipleDelimsAsOne',true);
             if isempty(tmp{1})
-                HasHeader=true;
+                HasHeader=1;
                 this.Name = strtrim(Header);
             else
-                HasHeader=false;
+                HasHeader=0;
                 [~,f,~]=fileparts(filename);
                 this.Name = f;
             end
